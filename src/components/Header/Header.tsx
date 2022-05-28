@@ -16,7 +16,8 @@ const Container = styled.div`
 `;
 
 const Options = styled.div`
-  
+  border: 1px solid #555;
+  display: flex;
 `;
 
 const Logo = styled.div`
@@ -27,12 +28,17 @@ const Logo = styled.div`
 
 const Button = styled.button`
   background-color: ${props => props.theme === 'dark' ? 'black' : 'white'};
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width:  25px;
   border-radius: 50%;
   cursor: pointer;
 `;
 
+const Alertas = styled.button`
+  height: 25px;
+  width:  25px;
+  margin-right: 16px;
+`;
 
 export const Header: React.FC<Props> = ({toggleTheme, theme}) => {
   return<>
@@ -40,6 +46,7 @@ export const Header: React.FC<Props> = ({toggleTheme, theme}) => {
       <Logo>Todo</Logo>
 
       <Options>
+        <Alertas/>
         <Button theme={theme} onClick={toggleTheme} />
       </Options>
     </Container>

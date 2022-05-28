@@ -31,6 +31,6 @@ type Props ={
 
 export const Theme: React.FC<Props> = ({children}) => {
   return(
-    <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    <ThemeProvider theme={themeDark}>{children}</ThemeProvider>
   )
 }

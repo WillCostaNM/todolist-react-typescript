@@ -1,11 +1,12 @@
 import React from "react";
-import { Text } from "components";
+
+// Components
+import { Text, Input, Button } from "components";
 
 export const Home: React.FC = () => {
-
   return<div>
-    <Text>Home</Text>
+    <Text>Tasks</Text>
+    <Input placeholder="Enter a task name here..."/>
+    <Button>OK</Button>
   </div>
-
-
 }

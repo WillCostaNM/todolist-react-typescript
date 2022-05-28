@@ -23,6 +23,8 @@ const themeDark = {
   }
 };
 
+export type ThemeType = typeof theme;
+
 type Props ={
   children?: React.ReactNode;
 }

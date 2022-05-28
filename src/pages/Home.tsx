@@ -1,12 +1,11 @@
 import React from "react";
+import { Text } from "components";
 
 export const Home: React.FC = () => {
 
-  return(<>
-    
-    <h1>Hello!</h1>
-
-  </>)
+  return<div>
+    <Text>Home</Text>
+  </div>
 
 
 }

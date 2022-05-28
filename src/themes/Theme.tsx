@@ -1,36 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import { ThemeProvider } from "styled-components";
+import {dark} from "./mode";
+import {light} from "./mode";
 
-const fontSizes = {
-  body: 14,
-  bodyExtraLarge: 20,
-  displayExtraLarge: 96
-};
+// Components
+import { Header } from "components";
 
-const theme = {
-  fontSizes,
-  colors: {
-    primary: '#5946D2',
-    secondary: '#F9B531'
-  }
-};
-
-const themeDark = {
-  fontSizes,
-  colors: {
-    primary: '#2567B4',
-    secondary: '#F9B531'
-  }
-};
-
-export type ThemeType = typeof theme;
+export type ThemeType = typeof dark;
 
 type Props ={
   children?: React.ReactNode;
 }
 
 export const Theme: React.FC<Props> = ({children}) => {
+  
+  const [theme, setTheme] = useState(dark);
+  
+  const toggleTheme = () => {
+    setTheme(theme.title == 'dark' ? light : dark);
+  }
+
   return(
-    <ThemeProvider theme={themeDark}>{children}</ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Header theme={theme.title} toggleTheme={toggleTheme}/>
+      {children}
+    </ThemeProvider>
   )
+  
 }

@@ -26,7 +26,7 @@ const Logo = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: ${props => props.theme === 'dark' ? 'black' : 'whit'};
+  background-color: ${props => props.theme === 'dark' ? 'black' : 'white'};
   height: 30px;
   width: 30px;
   border-radius: 50%;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 type Props = {
   toggleTheme(): void,
-  theme: string
+  themeName: string,
 }
 
 
@@ -27,27 +27,27 @@ const Logo = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: ${props => props.theme === 'dark' ? 'black' : 'white'};
+  background-color: ${props => props.theme.title === 'dark' ? 'black' : 'white'};
   height: 25px;
   width:  25px;
   border-radius: 50%;
   cursor: pointer;
 `;
 
-const Alertas = styled.button`
+const Alerts = styled.button`
   height: 25px;
   width:  25px;
   margin-right: 16px;
 `;
 
-export const Header: React.FC<Props> = ({toggleTheme, theme}) => {
+export const Header: React.FC<Props> = ({toggleTheme, themeName}) => {
   return<>
     <Container>
       <Logo>Todo</Logo>
 
       <Options>
-        <Alertas/>
-        <Button theme={theme} onClick={toggleTheme} />
+        <Alerts/>
+        <Button onClick={toggleTheme} />
       </Options>
     </Container>
   </>

@@ -13,18 +13,17 @@ type Props ={
 }
 
 export const Theme: React.FC<Props> = ({children}) => {
-  
+
   const [theme, setTheme] = useState(dark);
-  
+
   const toggleTheme = () => {
     setTheme(theme.title == 'dark' ? light : dark);
   }
 
   return(
     <ThemeProvider theme={theme}>
-      <Header theme={theme.title} toggleTheme={toggleTheme}/>
+      <Header themeName={theme.title} toggleTheme={toggleTheme}/>
       {children}
     </ThemeProvider>
   )
-  
 }

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-export const Text = styled.p`
-  font-family: 14px;
-  color: #fff;
+type Props = {
+  fontSize?: string,
+}
+
+export const Text = styled.p<Props>`
+  font-size: ${({fontSize}) => fontSize ? fontSize : ''};
+  color: rgb(${({theme}) => theme.colors.text});
   font-weight: bold;
 `;

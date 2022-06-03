@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "styled-components";
 
 // Components
-import { Text, Input, Row, Column, Button } from "components";
+import { Text, Input, Row, Column, List } from "components";
 import { ConfirmButton } from "./ConfirmButton";
 
 export const Home = () => {
@@ -17,6 +17,14 @@ export const Home = () => {
           OK
         </ConfirmButton>
       </Row>
+
+      <List items={[
+        {label: 'Task 1'},
+        {label: 'Task 2'},
+        {label: 'Task 3'},
+        {label: 'Task 4'}
+      ]}/>
+      
     </Column>
   </div>
 }

@@ -1,20 +1,20 @@
 import React from "react";
 
 import { Column } from 'components';
-import { ListItem } from 'components';
+import { ListItem, ListItemProps } from 'components';
 
 
-type Props = {
-  items: [];
+type ListProps = {
+  items: ListItemProps[];
 }
 
 
-export const List: React.FC<Props> = ({ items }) => {
+export const List: React.FC<ListProps> = ({ items }) => {
   return <>
-    <Column>
+    <Column margin="16px 0 0 0">
 
       {items.map((item, index) => (
-        <ListItem  key={index}/>
+        <ListItem  key={index} {...item}/>
       ))}   
 
     </Column>
